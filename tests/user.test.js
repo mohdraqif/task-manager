@@ -7,9 +7,9 @@ beforeEach(setupDatabase)
 
 test('Should signup a new user', async () => {
     const response = await request(app).post('/users').send({
-        name: 'Andrew',
-        email: 'andrew@example.com',
-        password: 'MyPass777!'
+        name: 'Mohd.Raqif Warsi',
+        email: 'mohdraqif94@gmail.com',
+        password: 'raqif@123'
     }).expect(201)
 
     // Assert that the database was changed correctly
@@ -19,8 +19,8 @@ test('Should signup a new user', async () => {
     // Assertions about the response
     expect(response.body).toMatchObject({
         user: {
-            name: 'Andrew',
-            email: 'andrew@example.com'
+            name: 'Mohd.Raqif Warsi',
+            email: 'mohdraqif94@gmail.com'
         },
         token: user.tokens[0].token
     })
